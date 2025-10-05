@@ -1,13 +1,13 @@
 #######################################
-# Syntax Coloring Map For ESP32_WebServer
+# Syntax Coloring Map For DIYables_ESP32_WebServer
 #######################################
 
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
 
-ESP32_WebServer	KEYWORD1
-ESP32_WebSocket	KEYWORD1
+DIYables_ESP32_WebServer	KEYWORD1
+DIYables_ESP32_WebSocket	KEYWORD1
 RouteHandler	KEYWORD1
 QueryParams	KEYWORD1
 WebSocketEventHandler	KEYWORD1
