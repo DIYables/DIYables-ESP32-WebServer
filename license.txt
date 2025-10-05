@@ -1,0 +1,77 @@
+ESP32_WebServer Library License
+====================================
+
+This library contains code from multiple sources with different licenses:
+
+1. ORIGINAL WEB SERVER CODE
+   Copyright (c) 2025, DIYables.io. All rights reserved.
+
+   Redistribution and use in source and binary forms, with or without
+   modification, are permitted provided that the following conditions
+   are met:
+
+   - Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+   - Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+   - Neither the name of the DIYables.io nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission.
+
+   THIS SOFTWARE IS PROVIDED BY DIYABLES.IO "AS IS" AND ANY EXPRESS OR
+   IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+   DISCLAIMED. IN NO EVENT SHALL DIYABLES.IO BE LIABLE FOR ANY DIRECT,
+   INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+   (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+   SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+   HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+   IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+   POSSIBILITY OF SUCH DAMAGE.
+
+2. WEBSOCKET IMPLEMENTATION (mWebSockets)
+   Source: https://github.com/skaarj1989/mWebSockets
+   License: GNU Lesser General Public License v2.1 (LGPL-2.1)
+   
+   The WebSocket functionality in this library is based on and incorporates
+   code from the mWebSockets library by skaarj1989, which is licensed under
+   the GNU Lesser General Public License v2.1.
+   
+   Files containing mWebSockets-derived code:
+   - src/ESP32_WebSocket.h
+   - src/ESP32_WebSocket.cpp
+   - src/ESP32_WebServerWithWebSocket.h
+   - All files in src/base64/ directory
+   - All files in src/CryptoLegacy/ directory
+   
+   For the complete LGPL-2.1 license text, see:
+   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html
+   
+   LGPL-2.1 Summary for WebSocket Components:
+   - You may use, modify, and distribute this library
+   - If you modify the WebSocket components, you must make the source
+     code of those modifications available under LGPL-2.1
+   - Applications using this library are not required to be GPL/LGPL
+   - You must retain all copyright notices and license information
+
+COMBINED LICENSE TERMS:
+========================
+- The web server portions are available under the BSD-style license above
+- The WebSocket portions are available under LGPL-2.1
+- You may use this library as a whole in your applications
+- If you modify WebSocket-related code, those modifications must be made
+  available under LGPL-2.1
+- The rest of your application can use any license you choose
+
+ATTRIBUTION REQUIREMENTS:
+=========================
+When using this library, please include the following attribution:
+
+"This software includes WebSocket functionality based on the mWebSockets 
+library (https://github.com/skaarj1989/mWebSockets) by skaarj1989, 
+licensed under LGPL-2.1, and web server functionality by DIYables.io 
+licensed under BSD-style license."

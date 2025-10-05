@@ -1,0 +1,57 @@
+#######################################
+# Syntax Coloring Map For ESP32_WebServer
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+ESP32_WebServer	KEYWORD1
+ESP32_WebSocket	KEYWORD1
+RouteHandler	KEYWORD1
+QueryParams	KEYWORD1
+WebSocketEventHandler	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+# WebServer Methods
+begin	KEYWORD2
+addRoute	KEYWORD2
+setNotFoundHandler	KEYWORD2
+handleClient	KEYWORD2
+sendResponse	KEYWORD2
+send404	KEYWORD2
+send401	KEYWORD2
+printWifiStatus	KEYWORD2
+
+# Authentication Methods
+enableAuthentication	KEYWORD2
+disableAuthentication	KEYWORD2
+isAuthenticationEnabled	KEYWORD2
+
+# WebSocket Methods
+enableWebSocket	KEYWORD2
+getWebSocket	KEYWORD2
+handleWebSocket	KEYWORD2
+onOpen	KEYWORD2
+onMessage	KEYWORD2
+onClose	KEYWORD2
+broadcastTXT	KEYWORD2
+broadcastBIN	KEYWORD2
+connectedClients	KEYWORD2
+isListening	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+WebSocket	LITERAL1
+DataType	LITERAL1
+TEXT	LITERAL1
+BINARY	LITERAL1
+CloseCode	LITERAL1
+
+
+
