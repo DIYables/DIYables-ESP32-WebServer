@@ -15,7 +15,7 @@
  * - Restarts WebSocket server when WiFi reconnects
  * - Maintains client connections across WiFi recovery
  * 
- * Hardware: ESP32 boards or DIYables STEM V4 IoT
+ * Hardware: ESP32 boards
  * Library: DIYables_ESP32_WebServer (with WebSocket support)
  */
 

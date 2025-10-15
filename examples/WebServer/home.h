@@ -8,7 +8,7 @@ const char HOME_PAGE[] PROGMEM = R"rawliteral(
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="data:,">
-  <title>Arduino Web Server</title>
+  <title>ESP32 Web Server</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -59,9 +59,9 @@ const char HOME_PAGE[] PROGMEM = R"rawliteral(
 </head>
 <body>
   <div class="container">
-    <h1>Arduino Uno R4 WiFi Web Server</h1>
+    <h1>ESP32 Web Server</h1>
     <div class="description">
-      <p>Welcome to the Arduino web server demo!</p>
+      <p>Welcome to the ESP32 Web Server demo!</p>
       <p>Explore the features below:</p>
     </div>
     <ul class="nav-menu">
@@ -73,7 +73,7 @@ const char HOME_PAGE[] PROGMEM = R"rawliteral(
       </li>
     </ul>
     <br><br><br><br>
-    This works with Arduino Uno R4 WiFi and <a href="https://diyables.io/products/diyables-stem-v4-iot-fully-compatible-with-arduino-uno-r4-wifi" target="_blank">DIYables STEM V4 IoT</a>
+    This works with <a href="https://diyables.io/esp32-board" target="_blank">ESP32 Boards</a>
   </div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 #######################################
-# Syntax Coloring Map For DIYables_ESP32_WebServer
+# Syntax Coloring Map For ESP32_WebServer
 #######################################
 
 #######################################

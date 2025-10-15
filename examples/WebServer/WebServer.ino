@@ -1,12 +1,12 @@
 /*
- * Arduino Uno R4 WiFi - Multi-Page Web Server Example
+ * ESP32 - Multi-Page Web Server Example
  * 
  * This example demonstrates how to create a multi-page web server with:
  * - Home page with navigation
  * - Temperature monitoring page
  * - LED control page
  * 
- * Hardware: Arduino Uno R4 WiFi or DIYables STEM V4 IoT
+ * Hardware: ESP32 Board
  * Library: DIYables_ESP32_WebServer
  */
 
@@ -20,7 +20,7 @@ const char WIFI_SSID[] = "YOUR_WIFI_SSID";
 const char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
 
 // LED configuration
-#define LED_PIN 13
+#define LED_PIN 2  // ESP32 built-in LED pin
 int ledState = LOW;  // Track LED state
 
 // Create web server instance
@@ -73,7 +73,7 @@ void setup() {
   pinMode(LED_PIN, OUTPUT);
   digitalWrite(LED_PIN, ledState);
   
-  Serial.println("Arduino Uno R4 WiFi - Multi-Page Web Server");
+  Serial.println("ESP32 - Multi-Page Web Server");
   
   // Connect to WiFi
   Serial.print("Connecting to ");

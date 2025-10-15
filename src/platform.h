@@ -2,7 +2,7 @@
  * platform.h
  * 
  * Platform configuration for ESP32 WebSocket Server
- * Based on mWebSockets library by skaarj1989
+ * Based on mWebSockets library by Dawid Kurek
  * 
  * Simplified for ESP32 only (no multi-platform support needed)
  * Uses native ESP32 WiFi library directly

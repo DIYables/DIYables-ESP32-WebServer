@@ -43,7 +43,7 @@ public:
   void printWifiStatus();
   
   // Basic Authentication methods (disabled by default for backward compatibility)
-  void enableAuthentication(const char* username, const char* password, const char* realm = "Arduino Server");
+  void enableAuthentication(const char* username, const char* password, const char* realm = "ESP32 Server");
   void disableAuthentication();
   bool isAuthenticationEnabled();
   void send401(WiFiClient& client);

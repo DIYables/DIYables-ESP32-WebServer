@@ -45,7 +45,7 @@ const char LED_PAGE[] PROGMEM = R"rawliteral(
   <br><br>
   <a href="/">Back to Home</a>
   <br><br><br><br>
-  This works with Arduino Uno R4 WiFi and <a href="https://diyables.io/products/diyables-stem-v4-iot-fully-compatible-with-arduino-uno-r4-wifi" target="_blank">DIYables STEM V4 IoT</a>
+  This works with <a href="https://diyables.io/esp32-board" target="_blank">ESP32 Boards</a>
 </body>
 </html>
 )rawliteral";

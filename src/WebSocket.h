@@ -1,7 +1,7 @@
 /*
  * WebSocket.h
  * 
- * Originally from mWebSockets library by skaarj1989
+ * Originally from mWebSockets library by Dawid Kurek
  * https://github.com/skaarj1989/mWebSockets
  * 
  * Modified for ESP32 compatibility

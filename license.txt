@@ -38,7 +38,7 @@ This library contains code from multiple sources with different licenses:
    License: GNU Lesser General Public License v2.1 (LGPL-2.1)
    
    The WebSocket functionality in this library is based on and incorporates
-   code from the mWebSockets library by skaarj1989, which is licensed under
+   code from the mWebSockets library by Dawid Kurek, which is licensed under
    the GNU Lesser General Public License v2.1.
    
    Files containing mWebSockets-derived code:
@@ -72,6 +72,6 @@ ATTRIBUTION REQUIREMENTS:
 When using this library, please include the following attribution:
 
 "This software includes WebSocket functionality based on the mWebSockets 
-library (https://github.com/skaarj1989/mWebSockets) by skaarj1989, 
+library (https://github.com/skaarj1989/mWebSockets) by Dawid Kurek, 
 licensed under LGPL-2.1, and web server functionality by DIYables.io 
 licensed under BSD-style license."

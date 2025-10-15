@@ -1,12 +1,12 @@
 /*
- * Arduino Uno R4 WiFi - Query String Web Server Example
+ * ESP32 - Query String Web Server Example
  * 
  * This example demonstrates how to create a web server with query parameters:
  * - Temperature page with unit conversion (C/F)
  * - LED control with query parameters
  * - Dynamic content based on URL parameters
  * 
- * Hardware: Arduino Uno R4 WiFi or DIYables STEM V4 IoT
+ * Hardware: ESP32 Board
  * Library: DIYables_ESP32_WebServer
  */
 
@@ -20,7 +20,7 @@ const char WIFI_SSID[] = "YOUR_WIFI_SSID";
 const char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
 
 // LED configuration
-#define LED_PIN 13
+#define LED_PIN 2  // ESP32 built-in LED pin
 int ledState = LOW;  // Track LED state
 
 // Create web server instance

@@ -1,7 +1,7 @@
 /*
  * WebSocketServer.cpp
  * 
- * Originally from mWebSockets library by skaarj1989
+ * Originally from mWebSockets library by Dawid Kurek
  * https://github.com/skaarj1989/mWebSockets
  * 
  * Modified for ESP32 compatibility
@@ -51,17 +51,13 @@ void WebSocketServer::listen() {
   _cleanDeadConnections();
 
   if (auto client = m_server.available(); client) {
-    Serial.println("[WebSocketServer] Client attempting connection");
-    
     if (auto ws = _getWebSocket(client); !ws) {
-      Serial.println("[WebSocketServer] New client detected, processing handshake");
       // A new client
       bool clientRequestFailed = false;
       for (auto &it : m_sockets) {
         if (!it) {
           char selectedProtocol[32]{};
           if (_handleRequest(client, selectedProtocol)) {
-            Serial.println("[WebSocketServer] Handshake successful, creating WebSocket");
             ws = it = new WebSocket{
               client, *selectedProtocol ? selectedProtocol : nullptr};
             if (_onConnection) _onConnection(*ws);
@@ -73,12 +69,10 @@ void WebSocketServer::listen() {
         }
       }
       if (!clientRequestFailed && !ws) {
-        Serial.println("[WebSocketServer] Server full, rejecting client");
         // Server is full
         _rejectRequest(client, WebSocketError::SERVICE_UNAVAILABLE);
       }
     } else {
-      Serial.println("[WebSocketServer] Existing client reconnecting");
     }
   }
   for (auto it : m_sockets) {
@@ -383,7 +377,7 @@ void WebSocketServer::_rejectRequest(
 void WebSocketServer::_acceptRequest(
   NetClient &client, const char *secKey, const char *protocol) {
   client.println(F("HTTP/1.1 101 Switching Protocols"));
-  // client.println(F("Server: Arduino"));
+  // client.println(F("Server: ESP32"));
   client.println(F("X-Powered-By: mWebSockets"));
   client.println(F("Upgrade: websocket"));
   client.println(F("Connection: Upgrade"));

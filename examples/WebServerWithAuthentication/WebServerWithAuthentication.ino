@@ -16,7 +16,7 @@ const char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
 
 // Authentication credentials
 const char* www_username = "admin";
-const char* www_password = "arduino";
+const char* www_password = "esp32";
 
 // Create web server instance
 DIYables_ESP32_WebServer server;
@@ -25,7 +25,7 @@ DIYables_ESP32_WebServer server;
 const char* LOGIN_SUCCESS_PAGE = R"(
 <!DOCTYPE HTML>
 <html>
-<head><title>Arduino Uno R4 Web Server</title></head>
+<head><title>ESP32 Web Server</title></head>
 <body>
 <h1>Login Successful!</h1>
 <p>You are now logged in.</p>
@@ -42,13 +42,6 @@ void handleRoot(WiFiClient& client, const String& method, const String& request,
 void setup() {
   Serial.begin(9600);
   delay(1000);
-  
-  String fv = WiFi.firmwareVersion();
-  if (fv < WIFI_FIRMWARE_LATEST_VERSION)
-    Serial.println("Please upgrade the firmware");
-
-  Serial.print("Attempting to connect to SSID: ");
-  Serial.println(WIFI_SSID);
 
   // Configure the main route
   server.addRoute("/", handleRoot);
@@ -57,7 +50,7 @@ void setup() {
   server.begin(WIFI_SSID, WIFI_PASSWORD);
 
   // Enable basic authentication
-  server.enableAuthentication(www_username, www_password, "Arduino");
+  server.enableAuthentication(www_username, www_password, "esp32");
 
   Serial.print("IP Address: ");
   Serial.println(WiFi.localIP());

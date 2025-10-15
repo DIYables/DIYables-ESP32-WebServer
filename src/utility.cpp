@@ -1,7 +1,7 @@
 /*
  * utility.cpp
  * 
- * Originally from mWebSockets library by skaarj1989
+ * Originally from mWebSockets library by Dawid Kurek
  * https://github.com/skaarj1989/mWebSockets
  * 
  * Modified for ESP32 compatibility
@@ -20,12 +20,11 @@ void printf(const __FlashStringHelper *fmt, ...) {
   va_list args;
   va_start(args, fmt);
 
-  // Arduino Uno R4 uses standard vsnprintf
+  // ESP32 uses standard vsnprintf
   vsnprintf(buffer, sizeof(buffer), reinterpret_cast<const char *>(fmt), args);
 
   va_end(args);
 
-  // Arduino Uno R4 uses standard Serial
   Serial.print(buffer);
 }
 

@@ -50,12 +50,12 @@ Tutorials
 
 References
 ----------------------------
-* [ESP32 WebServer Library Reference](https://esp32io.com/reference/library/esp32-web-server-library)
-* [Web Server Example](https://esp32io.com/reference/library/web-server-example)
-* [Web Server Query Strings Example](https://esp32io.com/reference/library/web-server-query-string-example)
-* [Web Server Json Example](https://esp32io.com/reference/library/web-server-json-example)
-* [Web Server With Web Socket Example](https://esp32io.com/reference/library/web-server-with-websocket-example)
-* [Web Server With Authentication Example](https://esp32io.com/reference/library/web-server-authentication-example)
+* [ESP32 WebServer Library Reference](https://esp32io.com/tutorials/diyables-esp32-web-server-library)
+* [Web Server Example](https://esp32io.com/tutorials/diyables-esp32-web-server-example)
+* [Web Server Query Strings Example](https://esp32io.com/tutorials/diyables-esp32-web-server-query-string-example)
+* [Web Server Json Example](https://esp32io.com/tutorials/diyables-esp32-web-server-json-example)
+* [Web Server With Web Socket Example](https://esp32io.com/tutorials/diyables-esp32-web-server-with-websocket-example)
+* [Web Server With Authentication Example](https://esp32io.com/tutorials/diyables-esp32-web-server-authentication-example)
 
 
 Tested Hardware
@@ -64,6 +64,6 @@ Tested Hardware
 | Board                   | Tested | Notes                                      |
 |-------------------------|:------:|---------------------------------------------|
 | ESP32     |   ✅   | Fully supported       |
-| [DIYables ESP32 Development Board](https://diyables.io/products/38-pin-esp32s-esp-wroom-32-wifi-and-bluetooth-development-board-with-usb-type-c-and-cp2102-dual-core-esp32-microcontroller-for-iot-projects-compatible-with-arduino-ide) |   ✅   | Fully supported          |
+| [DIYables ESP32 Development Board](https://diyables.io/esp32-board) |   ✅   | Fully supported          |
 | [DIYables ESP32 Starter Kit](https://diyables.io/products/esp32-starter-kit) |   ✅   | Fully supported          |
 

@@ -1,8 +1,8 @@
 /*
  * config.h
  * 
- * Originally from mWebSockets library by Links2004
- * https://github.com/Links2004/arduinoWebSockets
+ * Originally from mWebSockets library by Dawid Kurek
+ * https://github.com/skaarj1989/mWebSockets
  * 
  * Modified for ESP32 compatibility
  * - Removed network controller selection

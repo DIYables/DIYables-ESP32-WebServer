@@ -1,12 +1,12 @@
 /*
- * Arduino Uno R4 WiFi - JSON API Server Example
+ * ESP32 - JSON API Server Example
  * 
  * This example demonstrates how to create a RESTful API server with:
  * - GET request handling with JSON response
  * - POST request handling with JSON data parsing
  * - Proper HTTP status codes and headers
  * 
- * Hardware: Arduino Uno R4 WiFi or DIYables STEM V4 IoT
+ * Hardware: ESP32 Board
  * Library: DIYables_ESP32_WebServer, ArduinoJson
  */
 
@@ -109,7 +109,7 @@ void setup() {
   Serial.begin(9600);
   delay(1000);
 
-  Serial.println("Arduino Uno R4 WiFi - JSON API Server");
+  Serial.println("ESP32 - JSON API Server");
 
   // Connect to WiFi
   Serial.print("Connecting to ");

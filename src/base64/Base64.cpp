@@ -1,8 +1,8 @@
 /*
  * Base64.cpp
  * 
- * Originally from mWebSockets library by Links2004
- * https://github.com/Links2004/arduinoWebSockets
+ * Originally from mWebSockets library by Dawid Kurek
+ * https://github.com/skaarj1989/mWebSockets
  * 
  * Base64 encoding/decoding implementation
  * Copyright (c) 2013 Adam Rudd

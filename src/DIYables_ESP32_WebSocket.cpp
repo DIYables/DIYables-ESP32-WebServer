@@ -24,8 +24,6 @@ void DIYables_ESP32_WebSocket::staticOnConnection(net::WebSocket &ws) {
   if (instance) {
     Serial.print("WebSocket client connected from: ");
     Serial.println(ws.getRemoteIP());
-    Serial.print("Total clients: ");
-    Serial.println(instance->wsServer->countClients());
     
     // Set up individual client handlers
     ws.onMessage(staticOnMessage);
@@ -46,9 +44,7 @@ void DIYables_ESP32_WebSocket::staticOnMessage(net::WebSocket &ws, const net::We
 void DIYables_ESP32_WebSocket::staticOnClose(net::WebSocket &ws, const net::WebSocket::CloseCode code, const char *reason, uint16_t length) {
   if (instance) {
     Serial.print("WebSocket client disconnected - Code: ");
-    Serial.print((int)code);
-    Serial.print(", Remaining clients: ");
-    Serial.println(instance->wsServer->countClients());
+    Serial.println((int)code);
     
     if (instance->closeHandler) {
       instance->closeHandler(ws, code, reason, length);
@@ -57,7 +53,6 @@ void DIYables_ESP32_WebSocket::staticOnClose(net::WebSocket &ws, const net::WebS
 }
 
 bool DIYables_ESP32_WebSocket::begin() {
-  Serial.println("=== WebSocket Server Initialization ===");
   
   if (!wsServer) {
     Serial.println("ERROR: WebSocket server not initialized!");
@@ -72,15 +67,10 @@ bool DIYables_ESP32_WebSocket::begin() {
     return false;
   }
   
-  Serial.print("WiFi connected, IP: ");
-  Serial.println(WiFi.localIP());
-  
   // Set up connection handler
-  Serial.println("Setting up WebSocket connection handler...");
   wsServer->onConnection(staticOnConnection);
   
   // Start the WebSocket server
-  Serial.println("Starting WebSocket server...");
   wsServer->begin();
   initialized = true;
   wifiWasConnected = true;
@@ -89,13 +79,7 @@ bool DIYables_ESP32_WebSocket::begin() {
   // Small delay to let server fully initialize
   delay(100);
   
-  Serial.print("✓ WebSocket server started successfully on port ");
-  Serial.println(port);
-  Serial.print("✓ WebSocket URL: ws://");
-  Serial.print(WiFi.localIP());
-  Serial.print(":");
-  Serial.println(port);
-  Serial.println("=== WebSocket Server Ready ===");
+  Serial.println("WebSocket server started");
   
   return true;
 }
@@ -114,25 +98,6 @@ void DIYables_ESP32_WebSocket::loop() {
         Serial.println("WARNING: WiFi not connected, WebSocket not listening");
         lastWifiWarning = millis();
       }
-    }
-    
-    // Debug: Periodically show WebSocket status and client count
-    static unsigned long lastDebug = 0;
-    if (millis() - lastDebug > 15000) { // Every 15 seconds
-      Serial.println("=== WebSocket Status ===");
-      Serial.print("Server initialized: ");
-      Serial.println(initialized ? "YES" : "NO");
-      Serial.print("WiFi connected: ");
-      Serial.println(WiFi.status() == WL_CONNECTED ? "YES" : "NO");
-      uint8_t actualClients = wsServer->countClients();
-      Serial.print("Active clients: ");
-      Serial.println(actualClients);
-      Serial.print("Server listening on: ws://");
-      Serial.print(WiFi.localIP());
-      Serial.print(":");
-      Serial.println(port);
-      Serial.println("======================");
-      lastDebug = millis();
     }
   } else {
     static unsigned long lastInitWarning = 0;
@@ -208,7 +173,6 @@ void DIYables_ESP32_WebSocket::checkWiFiConnection() {
     }
     // WiFi reconnected - restart WebSocket
     else if (!wifiWasConnected && currentlyConnected) {
-      Serial.println("WiFi reconnected! Restarting WebSocket server...");
       wifiWasConnected = true;
       restartWebSocket();
     }
@@ -235,12 +199,5 @@ void DIYables_ESP32_WebSocket::restartWebSocket() {
     wsServer->onConnection(staticOnConnection);
     wsServer->begin();
     initialized = true;
-    
-    Serial.print("WebSocket server restarted on port ");
-    Serial.println(port);
-    Serial.print("WebSocket URL: ws://");
-    Serial.print(WiFi.localIP());
-    Serial.print(":");
-    Serial.println(port);
   }
 }

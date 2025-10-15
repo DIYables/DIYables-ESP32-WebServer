@@ -11,8 +11,8 @@ const char NOT_FOUND_PAGE_DEFAULT[] PROGMEM = R"rawliteral(
 </head>
 <body>
   <h1>404 - Page Not Found</h1>
-  <p>The requested page does not exist on Arduino.</p>
-  <a href="/">Back to Home</a> or  <a href="https://diyables.io/stem-v4-iot">Check Tutorials</a>
+  <p>The requested page does not exist on ESP32.</p>
+  <a href="/">Back to Home</a> or  <a href="https://diyables.io/esp32-web-server-library">Check Tutorials</a>
 </body>
 </html>
 )rawliteral";

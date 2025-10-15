@@ -7,7 +7,7 @@ DIYables_ESP32_WebServer::DIYables_ESP32_WebServer(int port) : server(port), rou
   // Initialize authentication variables
   memset(authUsername, 0, sizeof(authUsername));
   memset(authPassword, 0, sizeof(authPassword));
-  strcpy(authRealm, "Arduino Server");
+  strcpy(authRealm, "ESP32 Server");
 }
 
 void DIYables_ESP32_WebServer::begin() {
@@ -25,14 +25,13 @@ void DIYables_ESP32_WebServer::begin(const char* ssid, const char* pass) {
   delay(100);
 
   WiFi.begin(ssid, pass);
-  Serial.println("Connecting");
+  Serial.print("Connecting To WiFi");
   while(WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
   }
+  Serial.println();
 
-  Serial.print("Connected! IP Address: ");
-  Serial.println(WiFi.localIP());
   printWifiStatus();
 
   server.begin();
@@ -251,37 +250,29 @@ void DIYables_ESP32_WebServer::send404(WiFiClient& client) {
 void DIYables_ESP32_WebServer::printWifiStatus() {
   Serial.print("SSID: ");
   Serial.println(WiFi.SSID());
-  IPAddress ip = WiFi.localIP();
-  Serial.print("IP Address: ");
-  Serial.println(ip);
   long rssi = WiFi.RSSI();
   Serial.print("Signal strength (RSSI): ");
   Serial.print(rssi);
   Serial.println(" dBm");
+  
+  IPAddress ip = WiFi.localIP();
+  Serial.print("Web Server Address: http://");
+  Serial.println(ip);
 }
 
 // WebSocket functionality
-DIYables_ESP32_WebSocket* DIYables_ESP32_WebServer::enableWebSocket(uint16_t wsPort) {
-  Serial.println("=== Enabling WebSocket Server ===");
-  Serial.print("Requested port: ");
-  Serial.println(wsPort);
-  
+DIYables_ESP32_WebSocket* DIYables_ESP32_WebServer::enableWebSocket(uint16_t wsPort) {  
   if (webSocket == nullptr) {
-    Serial.println("Creating new WebSocket instance...");
     webSocket = new DIYables_ESP32_WebSocket(wsPort);
     
-    Serial.println("Starting WebSocket server...");
     if (webSocket->begin()) {
-      Serial.println("✓ WebSocket server enabled successfully");
       return webSocket;
     } else {
-      Serial.println("✗ Failed to start WebSocket server, cleaning up...");
       delete webSocket;
       webSocket = nullptr;
       return nullptr;
     }
   } else {
-    Serial.println("WebSocket already exists, returning existing instance");
     return webSocket;
   }
 }
